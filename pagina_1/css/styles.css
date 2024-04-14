@@ -6,7 +6,8 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #ebebeb;
+    background-color: hsl(0, 0%, 92%);
+    overflow: hidden;
 }
 
 h1 {
