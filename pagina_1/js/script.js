@@ -25,7 +25,7 @@
 
                 if (barcodes.length > 0) {
                     barcodes.forEach(barcode => {
-                        if (barcode.rawValue.length === 10) {
+                        if (barcode.rawValue.length === 13) {
                             const isDuplicate = detectedBarcodes.includes(barcode.rawValue);
                             if (isDuplicate) {
                                 displayMessage('Código de barras já lido.', 'error');
