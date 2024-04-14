@@ -19,7 +19,7 @@ p {
 
 #video {
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     height: auto;
     object-fit: cover;
     border: 2px solid #333;

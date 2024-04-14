@@ -33,7 +33,7 @@
                             } else {
                                 detectedBarcodes.push(barcode.rawValue);
                                 const resultDiv = document.createElement('div');
-                                resultDiv.textContent = "Código de barras detectado: " + barcode.rawValue;
+                                resultDiv.textContent = "Lido com sucesso: " + barcode.rawValue;
                                 resultDiv.classList.add('success');
                                 barcodeResults.appendChild(resultDiv);
                                 finishButton.style.display = 'block';
