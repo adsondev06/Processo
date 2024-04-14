@@ -19,7 +19,7 @@ p {
 
 #video {
     width: 100%;
-    max-width: 350px;
+    max-width: 250px;
     height: auto;
     object-fit: cover;
     border: 2px solid #333;
@@ -34,7 +34,7 @@ p {
     border-radius: 10px;
     color: #333;
     text-align: center;
-    max-height: 800px;
+    max-height: 500px;
     overflow-y: auto;
 }
 
