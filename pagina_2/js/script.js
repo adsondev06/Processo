@@ -36,7 +36,7 @@ const detectedBarcodes = JSON.parse(localStorage.getItem("detectedBarcodes")) ||
 // Exibir os códigos lidos numerados
 detectedBarcodes.forEach((code, index) => {
   const codeDiv = document.createElement("div");
-  codeDiv.textContent = (index + 1) + ": Código: " + code;
+  codeDiv.textContent = (index + 1) + ":  " + code;
   summaryDiv.appendChild(codeDiv);
 });
 
