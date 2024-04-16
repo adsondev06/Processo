@@ -40,3 +40,8 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.bold {
+  font-weight: bold;
+  color: black;
+}
