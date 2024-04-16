@@ -109,7 +109,8 @@
                                 detectedBarcodes.push(barcode.rawValue);
                                 const resultDiv = document.createElement('div');
                                 const lastFourDigits = barcode.rawValue.slice(-4);
-                                resultDiv.innerHTML = "Lido com sucesso: " + barcode.rawValue.replace(lastFourDigits, `<span class="error">${lastFourDigits}</span>`);
+                                const formattedBarcode = barcode.rawValue.replace(lastFourDigits, `<span class="bold">${lastFourDigits}</span>`);
+                                resultDiv.innerHTML = "Lido com sucesso: " + formattedBarcode;
                                 resultDiv.classList.add('success');
                                 barcodeResults.appendChild(resultDiv);
                                 finishButton.style.display = 'block';
