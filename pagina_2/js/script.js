@@ -15,7 +15,7 @@ function sendToWhatsApp() {
   // Construir a mensagem com os códigos numerados
   let message = "";
   detectedBarcodes.forEach((code, index) => {
-    message += (index + 1) + ":" + code + "\n";
+    message += (index + 1) + ":  " + code + "\n";
   });
 
   // URL do WhatsApp com a mensagem
