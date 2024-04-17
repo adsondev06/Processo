@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-   background-color: darkgray;
+    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 
 }
 
