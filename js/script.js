@@ -61,7 +61,7 @@ const barcodeResults = document.getElementById('barcode-results');
         }
 
         function sendToWhatsApp() {
-            const whatsappMessage = "Códigos lidos: " + detectedBarcodes.length + "\n\n" + detectedBarcodes.join("\n");
+            const whatsappMessage = "Códigos lidos: *" + detectedBarcodes.length + "*\n\n" + detectedBarcodes.join("\n");
             window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(whatsappMessage), "_blank");
         }
 
@@ -93,4 +93,6 @@ const barcodeResults = document.getElementById('barcode-results');
             window.location.reload();
         }
 
-        startBarcodeReader();
+        document.addEventListener('DOMContentLoaded', function() {
+            startBarcodeReader();
+        });
