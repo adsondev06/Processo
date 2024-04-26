@@ -112,7 +112,7 @@ async function startBarcodeReader() {
         const video = document.getElementById('video');
         video.srcObject = stream;
         await video.play();
-        setInterval(readBarcode, 3000); // Escaneia a cada 3 segundos
+        setInterval(readBarcode, 1000); // Escaneia a cada 3 segundos
     } catch (error) {
         console.error('Erro ao iniciar a leitura do código de barras:', error);
         displayMessage('Erro ao iniciar a leitura do código de barras.', 'error');
