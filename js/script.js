@@ -257,25 +257,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const codeInput = document.getElementById('codeInput');
 
-codeInput.addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-        const inputValue = this.value.trim();
-        if (inputValue.length > 0 && !detectedBarcodes.includes(inputValue)) {
-            detectedBarcodes.push(inputValue);
-            const resultDiv = document.createElement('div');
-            resultDiv.textContent = "Digitado manualmente: " + inputValue;
-            resultDiv.classList.add('success');
-            barcodeResults.appendChild(resultDiv);
-            codeCount.textContent = detectedBarcodes.length;
-            playSuccessSound();
-            codeCounter++;
-            if (codeCounter === 2) {
-                barcodeResults.style.overflowY = 'scroll';
-            }
-        } else {
-            displayMessage('Valor inválido ou já inserido.', 'error');
-            playErrorSound();
+codeInput.addEventListener('input', function() {
+    const inputValue = this.value.trim();
+    if (inputValue.length > 0 && !detectedBarcodes.includes(inputValue)) {
+        detectedBarcodes.push(inputValue);
+        const resultDiv = document.createElement('div');
+        resultDiv.textContent = "Digitado manualmente: " + inputValue;
+        resultDiv.classList.add('success');
+        barcodeResults.appendChild(resultDiv);
+        codeCount.textContent = detectedBarcodes.length;
+        playSuccessSound();
+        codeCounter++;
+        if (codeCounter === 2) {
+            barcodeResults.style.overflowY = 'scroll';
         }
-        this.value = '';
+    } else {
+        displayMessage('Valor inválido ou já inserido.', 'error');
+        playErrorSound();
     }
+    this.value = '';
 });
