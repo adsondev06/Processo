@@ -16,11 +16,11 @@ const urlParams = new URLSearchParams(window.location.search);
             var codigos = document.getElementById('codigos').value;
         
             // Verifica se ambos os campos estão preenchidos
-            if (nome.trim() !== '' && codigos.trim() !== '') {
-                // Se ambos os campos estiverem preenchidos, exibe uma mensagem de alerta
+            if (nome.trim() === '' || codigos.trim() === '') {
+                // Se algum dos campos não estiver preenchido, exibe uma mensagem de alerta
                 alert('Por favor, preencha todos os campos.');
             } else {
-                // Se os campos não estiverem preenchidos, envia os dados para o servidor
+                // Se os campos estiverem preenchidos, envia os dados para o servidor
                 fetch(this.action, {
                     method: this.method,
                     body: new FormData(this)
