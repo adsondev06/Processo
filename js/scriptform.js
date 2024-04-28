@@ -6,15 +6,21 @@ const urlParams = new URLSearchParams(window.location.search);
             const codigosSeparados = codigos.split(',').join('\n');
             document.getElementById('codigos').value = codigosSeparados;
         }
+        //Meu código funciona certo acima  
+
         document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault(); // Impede o envio padrão do formulário
         
-            // Verifica se os campos nome e codigos estão preenchidos
+            // Obtém os valores dos campos nome e codigos
             var nome = document.getElementById('nome').value;
             var codigos = document.getElementById('codigos').value;
         
+            // Verifica se ambos os campos estão preenchidos
             if (nome.trim() !== '' && codigos.trim() !== '') {
-                // Faz a requisição para o servidor
+                // Se ambos os campos estiverem preenchidos, exibe uma mensagem de alerta
+                alert('Por favor, preencha todos os campos.');
+            } else {
+                // Se os campos não estiverem preenchidos, envia os dados para o servidor
                 fetch(this.action, {
                     method: this.method,
                     body: new FormData(this)
@@ -32,15 +38,6 @@ const urlParams = new URLSearchParams(window.location.search);
                     console.error('Erro ao enviar os dados:', error);
                     alert('Erro ao enviar os dados.');
                 });
-            } else {
-                // Se os campos não estiverem preenchidos, exibe uma mensagem de alerta
-                alert('Por favor, preencha todos os campos.');
             }
-        });
-        
-        // Adiciona um evento de clique ao botão "Voltar ao Início"
-        document.getElementById('backToHome').addEventListener('click', function() {
-            // Redireciona para o início
-            window.location.href = "https://processo-ruby.vercel.app/";
         });
         
