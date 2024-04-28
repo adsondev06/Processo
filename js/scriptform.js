@@ -12,8 +12,8 @@ const urlParams = new URLSearchParams(window.location.search);
             event.preventDefault(); // Impede o envio padrão do formulário
         
             // Obtém os valores dos campos nome e codigos
-            var nome = document.getElementById('nome').value;
-            var codigos = document.getElementById('codigos').value;
+            const nome = document.getElementById('nome').value;
+            const codigos = document.getElementById('codigos').value;
         
             // Verifica se ambos os campos estão preenchidos
             if (nome.trim() === '' || codigos.trim() === '') {
