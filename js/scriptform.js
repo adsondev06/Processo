@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('codigos').value = '';
     }
 
-    // Limpar os campos do formulário quando a página for carregada ou exibida
-    window.onload = clearFormFields;
-    window.addEventListener('pageshow', clearFormFields);
+    // Limpar os campos do formulário quando o histórico de navegação é alterado (quando o usuário clica em "voltar")
+    window.addEventListener('popstate', clearFormFields);
 });
