@@ -302,7 +302,6 @@ function formatBarcode(rawBarcode) {
 function sendCodes() {
     // Preparando os dados para envio
     const data = {
-        nome: prompt("Digite seu nome:"), // Solicitar o nome ao usuário
         codigos: detectedBarcodes
     };
 
@@ -384,4 +383,3 @@ codeInput.addEventListener('keyup', function(event) {
         this.value = '';
     }
 });
-
