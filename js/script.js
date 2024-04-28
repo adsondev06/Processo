@@ -305,26 +305,9 @@ function sendCodes() {
         codigos: detectedBarcodes
     };
 
-    // Criando um formulário invisível para enviar os dados via POST
-    const form = document.createElement('form');
-    form.method = 'post';
-    form.action = 'indexform.html';
-    form.style.display = 'none';
-
-    // Criando inputs para cada par chave-valor
-    for (const key in data) {
-        if (data.hasOwnProperty(key)) {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = JSON.stringify(data[key]);
-            form.appendChild(input);
-        }
-    }
-
-    // Adicionando o formulário ao corpo do documento e submetendo
-    document.body.appendChild(form);
-    form.submit();
+    // Redirecionar para o indexform.html com os dados na URL
+    const queryString = new URLSearchParams(data).toString();
+    window.location.href = "indexform.html?" + queryString;
 }
 
 function playSuccessSound() {
