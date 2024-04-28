@@ -18,7 +18,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     .then(response => {
         if (response.ok) {
             // Se a resposta estiver OK, mostra a mensagem de sucesso
-            document.getElementById('sucesso').classList.remove('hidden');
+            document.getElementById('successMessage').classList.remove('hidden');
         } else {
             // Se houver um erro, exibe uma mensagem de erro
             alert('Erro ao enviar os dados.');
@@ -31,7 +31,8 @@ document.getElementById('form').addEventListener('submit', function(event) {
 });
 
 // Adiciona um evento de clique ao botão "Voltar ao Início"
-document.getElementById('voltar').addEventListener('click', function() {
+document.getElementById('backToHome').addEventListener('click', function() {
     // Redireciona para o início
     window.location.href = "https://processo-ruby.vercel.app/";
 });
+
