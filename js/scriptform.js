@@ -2,4 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
         const codigos = urlParams.get('codigos');
 
         // Preencher o textarea com os códigos lidos
-        document.getElementById('codigos').value = codigos;
+        if (codigos) {
+            const codigosSeparados = codigos.split(',').join('\n');
+            document.getElementById('codigos').value = codigosSeparados;
+        }
