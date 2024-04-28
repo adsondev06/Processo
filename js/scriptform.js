@@ -35,4 +35,3 @@ document.getElementById('backToHome').addEventListener('click', function() {
     // Redireciona para o início
     window.location.href = "https://processo-ruby.vercel.app/";
 });
-
