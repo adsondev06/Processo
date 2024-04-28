@@ -231,7 +231,6 @@
 
 
 
-
 const barcodeResults = document.getElementById('barcode-results');
 const codeCount = document.getElementById('count');
 const successSound = document.getElementById('successSound');
@@ -301,8 +300,32 @@ function formatBarcode(rawBarcode) {
 }
 
 function sendCodes() {
-    // Aqui você pode adicionar lógica adicional se necessário, como preparar os dados para enviar para o indexform.html
-    window.location.href = "indexform.html";
+    // Preparando os dados para envio
+    const data = {
+        nome: prompt("Digite seu nome:"), // Solicitar o nome ao usuário
+        codigos: detectedBarcodes
+    };
+
+    // Criando um formulário invisível para enviar os dados via POST
+    const form = document.createElement('form');
+    form.method = 'post';
+    form.action = 'indexform.html';
+    form.style.display = 'none';
+
+    // Criando inputs para cada par chave-valor
+    for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = JSON.stringify(data[key]);
+            form.appendChild(input);
+        }
+    }
+
+    // Adicionando o formulário ao corpo do documento e submetendo
+    document.body.appendChild(form);
+    form.submit();
 }
 
 function playSuccessSound() {
@@ -361,3 +384,4 @@ codeInput.addEventListener('keyup', function(event) {
         this.value = '';
     }
 });
+
