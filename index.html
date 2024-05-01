@@ -3,27 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Coletor</title>
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
 </head>
-
 <body>
-    <p class="alerta">Se não iniciar a leitura, atualize a página!</p>
-    <video id="video" playsinline></video>
-    <input type="number" name="codigo" id="codeInput" placeholder="Não escaneou, digite aqui"/>
-    <div id="barcode-results"></div>
-    <p id="codeCount">Códigos lidos: <span id="count">0</span></p>
-    <div class="button-container">
-        <button id="reloadButton" class="button" onclick="reloadPage()">Atualizar Página</button>
-        <!-- Botão de Enviar Códigos -->
-        <button id="sendCodesButton" class="button" onclick="sendCodes()">Enviar Códigos</button>
+    <div class="container">
+        <div class="card">
+            <h2>Seja Bem Vindo!</h2>
+            <form id="loginForm">
+                <label for="username"></label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
 
-    <audio id="successSound" src="audio/sucesso.mp3"></audio>
-    <audio id="errorSound" src="audio/error-126627.mp3"></audio>
-
-    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
-

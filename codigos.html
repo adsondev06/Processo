@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Coletor</title>
+</head>
+<body>
+    <!-- Seção do formulário -->
+    <div id="form-overlay">
+        <div id="form-container">
+            <form id="form" action="https://script.google.com/macros/s/AKfycbxv3pmnn3_6orZXtThuCpu36pjs4d1Hp4d2Hzd5P-Vvl3qgN35G7deq4NoleSinOOCh/exec" method="post">
+                <!-- Título do formulário -->
+                <h2>Seus Códigos</h2>
+        
+                <!-- Select para seleção da ação -->
+                <label for="acao" class="acao">Escolha:</label>
+                <select id="acao" name="acao" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="Insucesso">Insucesso</option>
+                    <option value="Coletas" selected>Coletas</option>
+                </select>
+        
+                <!-- Campo para inserir o nome do usuário -->
+                <label for="seunome">Seu Nome:</label>
+                <input type="text" id="seunome" name="seunome" required autocomplete="off" readonly>
+        
+                <!-- Campo de texto para inserir os códigos lidos -->
+                <label for="codigos">Códigos Lidos:</label>
+                <textarea id="codigos" name="codigos" rows="5" required></textarea>
+        
+                <!-- Botão para enviar o formulário -->
+                <button type="submit" class="enviar">Enviar</button>
+                <!-- Botão de Voltar para Coleta -->
+                <button type="button" onclick="toggleForm()" class="voltar">Voltar para Coleta</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Seção dos resultados de leitura -->
+    <p class="alerta">Se não iniciar a leitura, atualize a página!</p>
+    <video id="video" playsinline></video>
+    <input type="number" name="codigo" id="codeInput" placeholder="Não escaneou, digite aqui"/>
+    <div id="barcode-results"></div>
+    <p id="codeCount">Códigos lidos: <span id="count">0</span></p>
+    <div class="button-container">
+        <button id="reloadButton" class="button" onclick="reloadPage()">Atualizar Página</button>
+        <!-- Botão de Enviar Códigos -->
+        <button id="sendCodesButton" class="button" onclick="sendCodes(); toggleForm();">
+            <span class="click-twice">Clique 2x</span> 
+            Enviar Códigos
+          </button>
+          
+    </div>
+
+    <!-- Elementos de áudio para feedback -->
+    <audio id="successSound" src="audio/sucesso.mp3"></audio>
+    <audio id="errorSound" src="audio/error-126627.mp3"></audio>
+
+    <!-- Importação da biblioteca QuaggaJS -->
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+    
+    <!-- Script JavaScript personalizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>
