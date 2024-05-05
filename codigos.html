@@ -10,7 +10,7 @@
     <!-- Seção do formulário -->
     <div id="form-overlay">
         <div id="form-container">
-            <form id="form" action="https://script.google.com/macros/s/AKfycbwyxKUmWnq8HaJ1dEJ7TR7P4d_I3FzTKRVtnsAXripFYpowEAqeMzU1MT3PlaRQiq06/exec" method="post">
+            <form id="form" action="https://script.google.com/macros/s/AKfycbyHVVrYwYhX5VZyK43IMXS8arZx1UAFhAtPOW5XjLDUgukp4QWCebQgitM4cG801Oxv/exec" method="post">
                 <!-- Título do formulário -->
                 <h2>Seus Códigos</h2>
         
@@ -19,7 +19,7 @@
                 <select id="acao" name="acao" required>
                     <option value="">Selecione uma opção</option>
                     <option value="Insucesso">Insucesso</option>
-                    <option value="Coletas" selected>Coletas</option>
+                    <option value="Coletas">Coletas</option>
                 </select>
         
                 <!-- Campo para inserir o nome do usuário -->
@@ -31,7 +31,10 @@
                 <textarea id="codigos" name="codigos" rows="5" required></textarea>
         
                 <!-- Botão para enviar o formulário -->
-                <button type="submit" class="enviar">Enviar</button>
+                <button type="submit" class="enviar">
+                    <span class="click-one">Clique 1x</span> <br>
+                    Enviar
+                </button>
                 <!-- Botão de Voltar para Coleta -->
                 <button type="button" onclick="toggleForm()" class="voltar">Voltar para Coleta</button>
             </form>
